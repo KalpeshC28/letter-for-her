@@ -1,0 +1,32 @@
+/* Romantic upgrade: opening moment, music, gallery and gentle petals */
+.welcome-screen{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at center,#fffaf6 0,#f5e5df 72%,#ead6ce 100%);transition:opacity .9s ease,visibility .9s ease}
+.welcome-screen.is-opening{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-envelope{width:min(100%,520px);padding:58px 34px 54px;text-align:center;background:#fffaf6;border:1px solid #ead5cc;box-shadow:0 24px 90px #80584b1c;position:relative}
+.welcome-envelope:before,.welcome-envelope:after{content:"";position:absolute;width:55px;height:55px;border-color:#d7b4aa;border-style:solid;opacity:.7}
+.welcome-envelope:before{top:13px;left:13px;border-width:1px 0 0 1px}.welcome-envelope:after{right:13px;bottom:13px;border-width:0 1px 1px 0}
+.envelope-heart{display:block;color:#bd8179;font-size:35px;margin-bottom:14px;animation:heartbeat 1.8s ease-in-out infinite}
+.welcome-envelope h2{font:500 clamp(2.5rem,8vw,4rem)/1.05 'Playfair Display',serif;letter-spacing:-.04em;color:#573d38;margin:0 0 20px}
+.welcome-envelope h2 em{color:#b67870;font-weight:500}.welcome-envelope>p:not(.eyebrow){color:#98766d;font-size:13px;margin:0 0 26px}
+.open-letter{border:1px solid #c99c92;background:#f5e7e1;color:#875d57;padding:13px 27px;border-radius:30px;font:inherit;font-size:12px;letter-spacing:.06em;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.open-letter:hover{transform:translateY(-3px);box-shadow:0 9px 24px #b678702b}
+.music-room{max-width:none;text-align:center;background:#f1e2dc;padding-left:24px;padding-right:24px}
+.music-room h2,.photo-memories h2{font-size:clamp(2.8rem,7vw,5rem);margin-bottom:18px}
+.music-caption{color:#9c7068;font:italic 19px 'Playfair Display',serif;margin:0 0 20px}
+.spotify-frame{max-width:540px;margin:0 auto;padding:8px;background:#fffaf6;border:1px solid #ead5cc;box-shadow:0 16px 45px #8e61501a}
+.spotify-frame iframe{display:block;border-radius:12px}
+.music-footnote{font-size:11px;color:#a47c73;letter-spacing:.06em;margin:17px 0 0}
+.photo-memories{max-width:none;text-align:center;background:#fbf5f0;padding-left:24px;padding-right:24px}
+.gallery-intro{max-width:460px;margin:0 auto 38px;color:#8a6b64;font-size:14px}
+.photo-grid{width:min(100%,850px);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:center}
+.photo-card{margin:0;padding:13px 13px 18px;background:#fffdfb;box-shadow:0 12px 35px #80584b17;border:1px solid #eadbd4;transform:rotate(-2deg);transition:transform .4s,box-shadow .4s}
+.photo-card:nth-child(2){transform:rotate(2.5deg) translateY(16px)}.photo-card:nth-child(3){transform:rotate(-1deg)}
+.photo-card:hover{transform:translateY(-8px) rotate(0);box-shadow:0 20px 45px #80584b24}
+.photo-placeholder{aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(145deg,#f6e6df,#ead4cc 55%,#f8eee8);color:#b17d73}
+.photo-placeholder span{font:44px 'Playfair Display',serif}.photo-placeholder small{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#9b746c}
+.photo-card figcaption{padding-top:13px;color:#936b63;font:italic 17px 'Playfair Display',serif}
+.gallery-note{max-width:540px;margin:42px auto 0;color:#a17b73;font-size:12px;line-height:1.8}
+.petal-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:7}
+.petal{position:absolute;top:-35px;color:#c98e8c;opacity:0;animation:petal-fall var(--fall,12s) linear forwards;text-shadow:0 2px 8px #a96e6822}
+@keyframes petal-fall{0%{transform:translate3d(0,-5vh,0) rotate(0deg);opacity:0}12%{opacity:.52}85%{opacity:.38}100%{transform:translate3d(var(--side,45px),110vh,0) rotate(320deg);opacity:0}}
+@media(max-width:650px){.welcome-envelope{padding:48px 22px}.photo-grid{grid-template-columns:1fr;max-width:310px;gap:25px}.photo-card:nth-child(2){transform:rotate(1.5deg)}.photo-card:nth-child(3){transform:rotate(-1deg)}.photo-placeholder{aspect-ratio:5/4}.music-room,.photo-memories{padding-top:88px;padding-bottom:88px}}
+@media(prefers-reduced-motion:reduce){.welcome-screen,.welcome-envelope *, .photo-card,.petal{animation:none!important;transition:none!important}.petal{display:none}}
